@@ -8,6 +8,7 @@ import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,9 +40,8 @@ public class MainActivity extends AppCompatActivity {
         //use implicit Intent to open call screen
         //if your avd version is 6.0 above, you should
         //add the permission as follows
-        ActivityCompat.requestPermissions(this,);
+        ActivityCompat.requestPermissions(this,
         new String[]{Manifest.permission.CALL_PHONE},0x11);
-
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_CALL);
         inent.setData(Uri.parse("tel:15940846801"));
