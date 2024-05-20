@@ -41,14 +41,20 @@ public class MainActivity extends AppCompatActivity {
         //if your avd version is 6.0 above, you should
         //add the permission as follows
         ActivityCompat.requestPermissions(this,
-        new String[]{Manifest.permission.CALL_PHONE},0x11);
+        new String[]{android.Manifest.permission.CALL_PHONE},0x11);
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_CALL);
-        inent.setData(Uri.parse("tel:15940846801"));
+        intent.setData(Uri.parse("tel:15940846801"));
         startActivity(intent);
     }
 
+    public void openHome (View v) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        startActivity(intent);
 
+    }
 
     @Override
     protected void onStart() {
