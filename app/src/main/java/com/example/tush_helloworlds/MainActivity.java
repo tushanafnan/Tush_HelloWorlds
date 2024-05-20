@@ -1,6 +1,7 @@
 package com.example.tush_helloworlds;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +26,30 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void sendSMS (View v) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("sms:15724538545")); // Replace the number with the desired recipient's number
+        intent.putExtra("sms_body", "SMS sent via Tush's App");
+        startActivity(intent);
+
+    }
+
+    public void openCall(View v) {
+        //use implicit Intent to open call screen
+        //if your avd version is 6.0 above, you should
+        //add the permission as follows
+        ActivityCompat.requestPermissions(this,);
+        new String[]{Manifest.permission.CALL_PHONE},0x11);
+
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_CALL);
+        inent.setData(Uri.parse("tel:15940846801"));
+        startActivity(intent);
+    }
+
+
+
     @Override
     protected void onStart() {
         super.onStart();
